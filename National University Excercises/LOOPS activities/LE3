@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int options;
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        
+        do {
+            System.out.print("=".repeat(23));
+            System.out.println();
+            System.out.println("Welcome to Menu Driven");
+            System.out.println("=".repeat(23));
+            
+            System.out.println("1. Say Hello!");
+            System.out.println("2. Display your name");
+            System.out.println("3. Exit");
+            
+            System.out.print("Enter your choice: ");
+            options = scanner.nextInt();
+            
+            switch (options) {
+                case 1:
+                    System.out.println("Hello!");
+                    break;
+                case 2:
+                    System.out.println(name);
+                    break;
+                case 3:
+                    System.out.println("Exiting Program!");
+                    break;
+                default:
+                    System.out.println("Your choice is invalid pls try again");
+            }
+            
+            
+        } while (options != 3);
+        System.exit(0);
+        
+        
+        
+        scanner.close();
+    }
+}
