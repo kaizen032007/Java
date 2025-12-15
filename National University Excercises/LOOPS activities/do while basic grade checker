@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        int grade;
+        
+        do {
+            System.out.print("Enter your grade: ");
+            grade = scanner.nextInt();
+            
+            if (grade < 50 || grade > 100) {
+                System.out.println("The grade must be between 50 and 100");
+            } 
+        } while (grade < 50 || grade > 100);
+        
+        System.out.println("You passed the course");
+        
+        
+        
+        scanner.close();
+    }
+}
