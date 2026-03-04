@@ -171,5 +171,7 @@ public class FrontEnd {
 
     public void balance() {
         System.out.println("Your Balance: ");
+        System.out.println("The current Date: ");
     }
 }
+
