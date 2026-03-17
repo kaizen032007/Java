@@ -148,26 +148,45 @@ public class FrontEnd {
 
     public void financeTrackerMainWindow(String name, int age, Scanner scanner, backEnd backEnd,
             InputMismatchException inputError) {
-        System.out.println("=".repeat(70));
-        System.out.println("");
-        backEnd.printCentered("Account Created Successfully!");
-        backEnd.printCentered("Welcome to your Dashboard " + name + " || " + "Age: " + age);
-        System.out.println("");
-        System.out.println("=".repeat(70));
-        System.out.println();
 
-        System.out.println("1. Add Money: \n" +
-                "2. Withdraw Money: \n" +
-                "3. View Balance: \n" +
-                "4. View Transaction History: \n" +
-                "5. Exit \n");
+        boolean running = true;
 
-        System.out.print("Please choose an option: ");
-        int options = scanner.nextInt();
-        scanner.nextLine();
+        while (running) {
+            System.out.println("=".repeat(70));
+            System.out.println("");
+            backEnd.printCentered("Account Created Successfully!");
+            backEnd.printCentered("Welcome to your Dashboard " + name + " || " + "Age: " + age);
+            System.out.println("");
+            System.out.println("=".repeat(70));
+            System.out.println();
 
-        backEnd.financeTrackerMainWindowOptions(scanner, options, null, inputError, name);
+            System.out.println("1. Add Money: \n" +
+                    "2. Withdraw Money: \n" +
+                    "3. View Balance: \n" +
+                    "4. View Transaction History: \n" +
+                    "5. Exit \n");
 
+            try {
+                System.out.print("Please choose an option: ");
+                int options = scanner.nextInt();
+                scanner.nextLine();
+
+                if (options < 1 || options > 5) {
+                    throw new InputMismatchException("Please enter a number between 1 and 5");
+                }
+
+                if (options == 5) {
+                    System.out.println("Thank you for using Finance Tracker! Goodbye.");
+                    running = false;
+                } else {
+                    backEnd.financeTrackerMainWindowOptions(scanner, options, this, inputError, name);
+                }
+
+            } catch (InputMismatchException e) {
+                System.out.println("Error! " + e.getMessage());
+                scanner.nextLine();
+            }
+        }
     }
 
     public void balance() {
