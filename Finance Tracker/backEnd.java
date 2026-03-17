@@ -81,7 +81,7 @@ public class backEnd {
         }
 
         System.out.println("Please wait....");
-        // loadingBar();
+        loadingBar();
         System.out.println("] Done!");
         System.out.println("Going in!");
 
