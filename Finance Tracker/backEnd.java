@@ -36,7 +36,7 @@ public class backEnd {
         if (options == 1) {
             this.addMoney(scanner, frontEnd);
         } else if (options == 2) {
-            this.addMoney(scanner, frontEnd);
+            this.withdrawMoney(scanner);
         } else if (options == 3) {
             this.addMoney(scanner, frontEnd);
         }
@@ -170,18 +170,49 @@ public class backEnd {
 
         while (!validInput) {
             try {
-                System.out.println("Please enter your desire withdrawal amount: ");
+                System.out.print("Please enter your desire withdrawal amount: ");
                 int withdraw = scanner.nextInt();
 
                 if (withdraw < 0) {
                     System.out.println("Cannot withdraw less than 0 or negative. Please Try again");
                 }
 
-                if (withdraw > balance) {
+                if (withdraw <= balance) {
                     System.out.println("You are withdrawing more than the balance you have. Please Try Again");
                 }
-            } catch (InputMismatchException errorInput) {
 
+                balance -= withdraw;
+                System.out.println("Withdraw Success");
+                System.out.println("New Balance: " + balance);
+                validInput = true;
+            } catch (InputMismatchException errorInput) {
+                System.out.println("Error!" + errorInput.getMessage());
+            }
+        }
+
+        validInput = false;
+        while (!validInput) {
+            try {
+                System.out.print("Do you want to create another transaction? (y/n): ");
+                String option = scanner.nextLine();
+
+                if (!option.equalsIgnoreCase("y") && !option.equalsIgnoreCase("n")) {
+                    throw new InputMismatchException("You must put y or n only");
+                }
+
+                if (option.equals("y")) {
+                    validInput = true;
+                    System.out.println("Okay going back!");
+                    this.withdrawMoney(scanner);
+                }
+
+                if (option.equals("n")) {
+                    validInput = true;
+                    System.out.println("Great! Returning to Main Menu");
+                    return;
+                }
+            } catch (InputMismatchException errorInput) {
+                System.out.println("Erorr!" + errorInput.getMessage());
             }
         }
 
