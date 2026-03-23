@@ -1,0 +1,606 @@
+/* ========================
+   FINANCE TRACKER - MODERN DARK THEME
+   ======================== */
+
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-background-color: #0f1117;
+    -fx-text-fill: #e2e8f0;
+}
+
+/* ========================
+   AUTH SCREENS
+   ======================== */
+.auth-root {
+    -fx-background-color: #0f1117;
+}
+
+.auth-card {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 30, 0, 0, 10);
+    -fx-padding: 40 50 40 50;
+}
+
+.auth-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.auth-subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 14px;
+}
+
+.app-logo-text {
+    -fx-text-fill: #6366f1;
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
+
+.app-tagline {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 13px;
+}
+
+/* ========================
+   FORM INPUTS
+   ======================== */
+.modern-field {
+    -fx-background-color: #252836;
+    -fx-text-fill: #e2e8f0;
+    -fx-prompt-text-fill: #4a5568;
+    -fx-border-color: #2d3748;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1.5;
+    -fx-padding: 12 16 12 16;
+    -fx-font-size: 14px;
+    -fx-pref-height: 46px;
+}
+
+.modern-field:focused {
+    -fx-border-color: #6366f1;
+    -fx-background-color: #2a2d3e;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.3), 8, 0, 0, 0);
+}
+
+.field-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 4 2;
+}
+
+/* ========================
+   BUTTONS
+   ======================== */
+.btn-primary {
+    -fx-background-color: #6366f1;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 13 24 13 24;
+    -fx-cursor: hand;
+    -fx-pref-height: 46px;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.4), 10, 0, 0, 4);
+}
+
+.btn-primary:hover {
+    -fx-background-color: #7c3aed;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.6), 14, 0, 0, 4);
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #5b21b6;
+    -fx-effect: dropshadow(gaussian, rgba(99,102,241,0.2), 5, 0, 0, 2);
+}
+
+.btn-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6366f1;
+    -fx-font-size: 13px;
+    -fx-border-color: #6366f1;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: rgba(99,102,241,0.1);
+}
+
+.btn-danger {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-radius: 8;
+    -fx-padding: 7 14 7 14;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #dc2626;
+}
+
+.btn-success {
+    -fx-background-color: #10b981;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-radius: 8;
+    -fx-padding: 7 14 7 14;
+    -fx-cursor: hand;
+}
+
+.btn-success:hover {
+    -fx-background-color: #059669;
+}
+
+.link-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6366f1;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-underline: false;
+    -fx-border-width: 0;
+}
+
+.link-btn:hover {
+    -fx-text-fill: #818cf8;
+}
+
+/* ========================
+   SIDEBAR
+   ======================== */
+.sidebar {
+    -fx-background-color: #12141f;
+    -fx-min-width: 230px;
+    -fx-pref-width: 230px;
+    -fx-padding: 0;
+}
+
+.sidebar-logo {
+    -fx-text-fill: #6366f1;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 24 20 4 20;
+}
+
+.sidebar-logo-sub {
+    -fx-text-fill: #475569;
+    -fx-font-size: 11px;
+    -fx-padding: 0 20 20 20;
+}
+
+.sidebar-section-label {
+    -fx-text-fill: #475569;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 16 20 6 20;
+}
+
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+    -fx-padding: 10 20 10 20;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-min-width: 210px;
+    -fx-pref-width: 210px;
+    -fx-graphic-text-gap: 12;
+}
+
+.nav-item:hover {
+    -fx-background-color: rgba(99,102,241,0.08);
+    -fx-text-fill: #94a3b8;
+}
+
+.nav-item-active {
+    -fx-background-color: rgba(99,102,241,0.15);
+    -fx-text-fill: #818cf8;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent transparent #6366f1;
+    -fx-border-width: 0 0 0 3;
+}
+
+.nav-item-active:hover {
+    -fx-background-color: rgba(99,102,241,0.2);
+}
+
+.sidebar-divider {
+    -fx-background-color: #1e2231;
+    -fx-pref-height: 1;
+    -fx-min-height: 1;
+    -fx-max-height: 1;
+    -fx-margin: 8 0 8 0;
+}
+
+.user-info-box {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 12;
+    -fx-padding: 12 14 12 14;
+    -fx-margin: 12;
+}
+
+.user-name-label {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.user-email-label {
+    -fx-text-fill: #475569;
+    -fx-font-size: 11px;
+}
+
+/* ========================
+   DASHBOARD / MAIN CONTENT
+   ======================== */
+.main-content {
+    -fx-background-color: #0f1117;
+    -fx-padding: 28 32 28 32;
+}
+
+.page-title {
+    -fx-text-fill: #f1f5f9;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.page-subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+/* ========================
+   STAT CARDS
+   ======================== */
+.stat-card {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 16;
+    -fx-padding: 22 24 22 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 12, 0, 0, 4);
+    -fx-min-width: 180;
+}
+
+.stat-card-income {
+    -fx-border-color: rgba(16,185,129,0.3);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.stat-card-expense {
+    -fx-border-color: rgba(239,68,68,0.3);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.stat-card-balance {
+    -fx-border-color: rgba(99,102,241,0.4);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.stat-card-budget {
+    -fx-border-color: rgba(245,158,11,0.3);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.stat-label {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: #f1f5f9;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.stat-value-income { -fx-text-fill: #10b981; }
+.stat-value-expense { -fx-text-fill: #ef4444; }
+.stat-value-balance { -fx-text-fill: #818cf8; }
+.stat-value-budget { -fx-text-fill: #f59e0b; }
+
+.stat-icon {
+    -fx-font-size: 20px;
+    -fx-padding: 0 0 6 0;
+}
+
+/* ========================
+   TABLE
+   ======================== */
+.modern-table {
+    -fx-background-color: #1a1d2e;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: #1e2231;
+    -fx-background-radius: 16;
+}
+
+.modern-table .column-header-background {
+    -fx-background-color: #13162a;
+    -fx-background-radius: 12 12 0 0;
+}
+
+.modern-table .column-header {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748b;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 14 12 14;
+}
+
+.modern-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #1e2231 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0;
+}
+
+.modern-table .table-row-cell:hover {
+    -fx-background-color: rgba(99,102,241,0.05);
+}
+
+.modern-table .table-row-cell:selected {
+    -fx-background-color: rgba(99,102,241,0.12);
+}
+
+.modern-table .table-cell {
+    -fx-text-fill: #cbd5e1;
+    -fx-font-size: 13px;
+    -fx-padding: 11 14 11 14;
+    -fx-background-color: transparent;
+}
+
+/* ========================
+   COMBO BOX / DATE PICKER
+   ======================== */
+.modern-combo {
+    -fx-background-color: #252836;
+    -fx-border-color: #2d3748;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 1.5;
+    -fx-pref-height: 46px;
+    -fx-min-width: 160px;
+}
+
+.modern-combo .list-cell {
+    -fx-text-fill: #e2e8f0;
+    -fx-background-color: #252836;
+    -fx-font-size: 13px;
+}
+
+.modern-combo:focused {
+    -fx-border-color: #6366f1;
+}
+
+.modern-combo .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.modern-combo .arrow {
+    -fx-background-color: #64748b;
+}
+
+/* ========================
+   SECTION CARD
+   ======================== */
+.section-card {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 16;
+    -fx-padding: 20 24 20 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 3);
+}
+
+.section-title {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* ========================
+   LOADING / STATUS
+   ======================== */
+.loading-overlay {
+    -fx-background-color: rgba(15,17,23,0.85);
+    -fx-background-radius: 20;
+}
+
+.loading-card {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 16;
+    -fx-padding: 32 40;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 20, 0, 0, 8);
+}
+
+.loading-title {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.loading-status {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+}
+
+.progress-bar-modern {
+    -fx-accent: #6366f1;
+    -fx-pref-height: 6;
+    -fx-background-color: #252836;
+    -fx-background-radius: 3;
+    -fx-pref-width: 300;
+}
+
+.progress-bar-modern .track {
+    -fx-background-color: #252836;
+    -fx-background-radius: 3;
+}
+
+.progress-bar-modern .bar {
+    -fx-background-color: linear-gradient(to right, #6366f1, #8b5cf6);
+    -fx-background-radius: 3;
+    -fx-background-insets: 0;
+}
+
+/* ========================
+   BADGE / TAG
+   ======================== */
+.badge-income {
+    -fx-background-color: rgba(16,185,129,0.15);
+    -fx-text-fill: #10b981;
+    -fx-background-radius: 6;
+    -fx-padding: 3 8 3 8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.badge-expense {
+    -fx-background-color: rgba(239,68,68,0.15);
+    -fx-text-fill: #ef4444;
+    -fx-background-radius: 6;
+    -fx-padding: 3 8 3 8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* ========================
+   SCROLLBAR
+   ======================== */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #2d3748;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #3d4a5c;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+/* ========================
+   DIALOG / MODAL
+   ======================== */
+.dialog-pane {
+    -fx-background-color: #1a1d2e;
+    -fx-border-color: #2d3748;
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #13162a;
+    -fx-background-radius: 16 16 0 0;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #e2e8f0;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .content {
+    -fx-background-color: #1a1d2e;
+    -fx-text-fill: #94a3b8;
+}
+
+/* ========================
+   CHART
+   ======================== */
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.chart-background {
+    -fx-background-color: transparent;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-text-fill: #64748b;
+}
+
+.axis {
+    -fx-tick-label-fill: #64748b;
+    -fx-tick-mark-stroke: #2d3748;
+}
+
+.axis-label {
+    -fx-text-fill: #64748b;
+}
+
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines {
+    -fx-stroke: #1e2231;
+    -fx-stroke-dash-array: 4 4;
+}
+
+.default-color0.chart-bar { -fx-bar-fill: #6366f1; }
+.default-color1.chart-bar { -fx-bar-fill: #10b981; }
+.default-color2.chart-bar { -fx-bar-fill: #f59e0b; }
+.default-color3.chart-bar { -fx-bar-fill: #ef4444; }
+.default-color4.chart-bar { -fx-bar-fill: #8b5cf6; }
+.default-color5.chart-bar { -fx-bar-fill: #06b6d4; }
+
+/* Error / success labels */
+.error-label {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 12px;
+}
+
+.success-label {
+    -fx-text-fill: #10b981;
+    -fx-font-size: 12px;
+}
+
+/* ========================
+   BUDGET BAR
+   ======================== */
+.budget-progress {
+    -fx-pref-height: 10;
+    -fx-background-radius: 5;
+    -fx-pref-width: 350;
+}
+
+.budget-progress .track {
+    -fx-background-color: #252836;
+    -fx-background-radius: 5;
+}
+
+.budget-progress-ok .bar {
+    -fx-background-color: linear-gradient(to right, #10b981, #34d399);
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.budget-progress-warn .bar {
+    -fx-background-color: linear-gradient(to right, #f59e0b, #fbbf24);
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
+
+.budget-progress-over .bar {
+    -fx-background-color: linear-gradient(to right, #ef4444, #f87171);
+    -fx-background-radius: 5;
+    -fx-background-insets: 0;
+}
