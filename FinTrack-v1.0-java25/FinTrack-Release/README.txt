@@ -45,3 +45,5 @@ Zip this entire folder and send it to anyone.
 Each person's data stays on their own machine.
 
 Built with: Java 25 · JavaFX 11 · Apache Commons CSV
+
+<THIS IS BUILT IN GUI APPLICATION> 
