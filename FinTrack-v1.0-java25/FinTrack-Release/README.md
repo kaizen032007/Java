@@ -5,7 +5,6 @@
 ![Java](https://img.shields.io/badge/Java-25-orange?style=for-the-badge&logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/JavaFX-11-blue?style=for-the-badge&logo=java&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
 
 **A modern, fully offline personal finance tracker built with Java 25 and JavaFX.**  
@@ -201,12 +200,6 @@ Contributions are welcome! Here's how:
 5. Open a **Pull Request**
 
 Please make sure your code follows the existing style and compiles cleanly with Java 25.
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
