@@ -1,6 +1,6 @@
 package com.sora;
 
-public class Transaction {
+public abstract class Transaction {
     private String transactionId;
     private String userId;
     private String type;
@@ -9,7 +9,8 @@ public class Transaction {
     private String description;
     private String date;
 
-    Transaction(String transactionId, String userId, String type, double amount, String category, String description, String date) {
+    Transaction(String transactionId, String userId, String type, double amount, String category,
+            String description, String date) {
         this.transactionId = transactionId;
         this.userId = userId;
         this.type = type;
@@ -19,13 +20,34 @@ public class Transaction {
         this.date = date;
     }
 
-    public String getTransactionId() { return transactionId; }
-    public String getUserId() { return userId; }
-    public String getType() { return type; }
-    public double getAmount() { return amount; }
-    public String getCategory() { return category; }
-    public String getDescription() { return description; }
-    public String getDate() { return date; }
+    public String getTransactionId() {
+        return transactionId;
+    }
 
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public abstract String getTransactionCategory();
 
 }
