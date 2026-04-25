@@ -15,12 +15,32 @@ public class User {
         this.password = password;
     }
 
-    public String getUserId() { return userId; }
-    public String getFirstName() { return firstName; }
-    public String getLastName() { return lastName; }
-    public String getEmail() { return email; }
-    
+    public String getUserId() {
+        return userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     public boolean validatePassword(String input) {
         return this.password.equals(input);
+    }
+
+    String getPassword() {
+        return password;
+    }
+
+    public String toString() { // for debugging purposes;
+        return "User { " + "UserId: " + userId + " First name: " + firstName + " Last Name: "
+                + lastName + " Email: " + email;
     }
 }
