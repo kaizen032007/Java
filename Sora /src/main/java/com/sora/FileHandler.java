@@ -10,7 +10,7 @@ public class FileHandler {
         FileWriter fileWriter = new FileWriter("data/users.txt");
         for (User user : users) {
             fileWriter.write(user.getUserId() + "," + user.getFirstName() + "," + user.getLastName()
-                    + "," + user.getEmail() + "\n");
+                    + "," + user.getEmail() + "," + user.getPassword() + "\n");
         }
         fileWriter.close();
     }
@@ -21,7 +21,7 @@ public class FileHandler {
             System.out.println("File exist"); // debugging purposes
         } else {
             System.out.println("File Does not exist"); // debugging process
-            return null;
+            return new ArrayList<>();
         }
 
         List<User> users = new ArrayList();
@@ -32,11 +32,54 @@ public class FileHandler {
                 System.out.println(line);
                 String[] parts = line.split(",");
 
-                User user = new User(parts[0], parts[1], parts[2], parts[3], "password");
+                User user = new User(parts[0], parts[1], parts[2], parts[3], parts[4]);
 
                 users.add(user);
             }
         }
         return users;
+    }
+
+    public void saveTransactions(List<Transaction> transactions) throws IOException {
+        FileWriter fileWriter = new FileWriter("data/transactions.txt");
+        for (Transaction transaction : transactions) {
+            fileWriter.write(transaction.getTransactionId() + "," + transaction.getUserId() + ","
+                    + transaction.getType() + "," + transaction.getAmount() + ","
+                    + transaction.getCategory() + "," + transaction.getDescription() + ","
+                    + transaction.getDate() + "\n");
+        }
+        fileWriter.close();
+    }
+
+    public List<Transaction> loadTransactions() throws IOException {
+        File filePath = new File("data/transactions.txt");
+        if (filePath.exists()) {
+            System.out.println("File exists");
+        } else {
+            System.out.println("File does not exists");
+            return new ArrayList<>();
+        }
+
+        List<Transaction> transactions = new ArrayList();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader("data/transactions.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+                String[] parts = line.split(",");
+                String type = parts[2];
+                Transaction transaction;
+                if (type.equals("INCOME")) {
+                    transaction = new IncomeTransaction(parts[0], parts[1], parts[2],
+                            Double.parseDouble(parts[3]), parts[4], parts[5], parts[6]);
+                } else {
+                    transaction = new ExpenseTransaction(parts[0], parts[1], parts[2],
+                            Double.parseDouble(parts[3]), parts[4], parts[5], parts[6]);
+                }
+
+                transactions.add(transaction);
+            }
+        }
+        return transactions;
     }
 }
