@@ -1,4 +1,4 @@
-package com.sora;
+package com.sora.model;
 
 public class User {
 
@@ -32,7 +32,7 @@ public class User {
         return email;
     }
 
-    String getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -43,7 +43,7 @@ public class User {
     @Override
     public String toString() {
         return "User ID: " + userId +
-               ", Name: " + firstName + " " + lastName +
-               ", Email: " + email;
+                ", Name: " + firstName + " " + lastName +
+                ", Email: " + email;
     }
 }
