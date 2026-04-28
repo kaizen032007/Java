@@ -1,0 +1,9 @@
+.root-pane {
+    -fx-background-color: #1e1e2e;
+}
+
+.welcome-label {
+    -fx-text-fill: #cdd6f4;
+    -fx-font-size: 24px;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
