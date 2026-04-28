@@ -42,7 +42,6 @@ public class UsersServices {
         }
 
         // LAST NAME SECTION VALIDATION
-
         if (lastName == null || lastName.length() < 2) {
             errorMessage = "Last Name must be atleast more than 2 characters";
             return false;
@@ -51,7 +50,6 @@ public class UsersServices {
         if (!lastName.matches("^[a-zA-z0-9@_.-]+$")) {
             errorMessage = "Last Name contains invalid special characters";
             return false;
-
         }
 
         if (lastName.matches(".*\\d.*")) {
@@ -60,7 +58,6 @@ public class UsersServices {
         }
 
         // EMAIL SECTION VALIDATION
-
         if (!email.contains("@") || !email.contains(".")) {
             errorMessage = "Email must contain @ and .";
             return false;
@@ -95,5 +92,25 @@ public class UsersServices {
 
     public String getErrorMessage() {
         return errorMessage;
+    }
+
+    // METHOD TO GET USER BY ID
+    public User getUserById(String userId) {
+        for (User user : users) {
+            if (user.getUserId().equals(userId)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    // METHOD TO LOGIN USERS
+    public boolean loginUsers(String userId, String password) {
+        for (User user : users) {
+            if (user.getUserId().equals(userId)) {
+                return user.validatePassword(password);
+            }
+        }
+        return false;
     }
 }
