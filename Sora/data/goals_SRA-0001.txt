@@ -1,0 +1,1 @@
+G-1778946245106 , LAPTOP , Resources/icons/goals.png , 50000.0 , 1500.0

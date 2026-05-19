@@ -1,0 +1,181 @@
+package com.sora.service;
+
+import java.util.List;
+import com.sora.model.User;
+import com.sora.util.FileHandler;
+import java.util.ArrayList;
+import java.io.*;
+
+/**
+ * Service class that handles account business logic, including user registration,
+ * verification validation checks, password checks during login, and session persistence.
+ */
+public class UsersServices {
+    private static int counterUser = 1;
+    private List<User> users;
+    private FileHandler fileHandler;
+    private String errorMessage = "";
+
+    /**
+     * Initializes the service, loads existing users from disk, and sets up
+     * the sequential unique user ID counter.
+     */
+    public UsersServices() {
+        try {
+            this.fileHandler = new FileHandler();
+            this.users = fileHandler.loadUsers();
+            
+            // Determine the next user ID index by checking current active accounts
+            int maxId = 0;
+            for (User u : users) {
+                try {
+                    String idNum = u.getUserId().replace("SRA-", "");
+                    maxId = Math.max(maxId, Integer.parseInt(idNum));
+                } catch (Exception e) {}
+            }
+            counterUser = maxId + 1;
+            
+        } catch (IOException e) {
+            System.out.println("Could not load Users");
+            this.users = new ArrayList<>();
+            counterUser = 1;
+        }
+    }
+
+    /**
+     * Validates input details for a new user registration.
+     * Checks constraints for first name, last name, email format, password length, and uniqueness.
+     * Returns true if validation passes and user is successfully registered.
+     */
+    public boolean usersValidation(String firstName, String lastName, String email, String password) {
+
+        // Validate First Name length and characters
+        if (firstName == null || firstName.length() < 2) {
+            errorMessage = "First Name must be atleast more than 2 characters";
+            return false;
+        }
+
+        if (!firstName.matches("^[a-zA-z0-9@_.-]+$")) {
+            errorMessage = "First Name contains invalid special characters";
+            return false;
+        }
+
+        if (firstName.matches(".*\\d.*")) {
+            errorMessage = "First Name cannot contains numbers";
+            return false;
+        }
+
+        // Validate Last Name length and characters
+        if (lastName == null || lastName.length() < 2) {
+            errorMessage = "Last Name must be atleast more than 2 characters";
+            return false;
+        }
+
+        if (!lastName.matches("^[a-zA-z0-9@_.-]+$")) {
+            errorMessage = "Last Name contains invalid special characters";
+            return false;
+        }
+
+        if (lastName.matches(".*\\d.*")) {
+            errorMessage = "Last Name cannot contain numbers";
+            return false;
+        }
+
+        // Validate basic email format structure
+        if (!email.contains("@") || !email.contains(".")) {
+            errorMessage = "Email must contain @ and .";
+            return false;
+        }
+
+        // Validate basic password length requirements
+        if (password.length() < 2) {
+            errorMessage = "password must be atleast more than 2 characters";
+            return false;
+        }
+
+        // Ensure email isn't already used by another account
+        for (User user : users) {
+            if (user.getEmail().equalsIgnoreCase(email)) {
+                errorMessage = "Email is already registered.";
+                return false;
+            }
+        }
+
+        // Auto-generate the next unique user ID
+        String userId = String.format("SRA-%04d", counterUser);
+        counterUser++;
+
+        User newUser = new User(userId, firstName, lastName, email, password);
+        users.add(newUser);
+
+        try {
+            fileHandler.saveUsers(users);
+            return true;
+        } catch (IOException e) {
+            System.out.println("Failed to save this file");
+            return false;
+        }
+    }
+
+    /**
+     * Authenticates a user by checking email and matching password.
+     * Returns the matching User object if authentication is successful.
+     */
+    public User loginUser(String email, String password) {
+        for (User user : users) {
+            if (user.getEmail().equalsIgnoreCase(email) && user.validatePassword(password)) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Updates an existing user's details and persists it to the file system.
+     */
+    public void updateUser(User updatedUser) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getUserId().equals(updatedUser.getUserId())) {
+                users.set(i, updatedUser);
+                break;
+            }
+        }
+        try {
+            fileHandler.saveUsers(users);
+        } catch (IOException e) {
+            System.out.println("Failed to update user");
+        }
+    }
+
+    /**
+     * Returns the error message generated by the validation process.
+     */
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    /**
+     * Saves credentials for the auto-login session to disk.
+     */
+    public void saveRememberedInfo(String info) {
+        try {
+            fileHandler.saveRememberedUser(info);
+        } catch (IOException e) {
+            System.out.println("Could not save remembered info");
+        }
+    }
+
+    /**
+     * Clears the auto-login session from disk.
+     */
+    public void clearRememberedUser() {
+        fileHandler.clearRememberedUser();
+    }
+
+    /**
+     * Retrieves the auto-login session payload if it exists.
+     */
+    public String loadRememberedInfo() {
+        return fileHandler.loadRememberedUser();
+    }
+}

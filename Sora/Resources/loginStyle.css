@@ -1,0 +1,129 @@
+/* Styling rules for the left-side white panel where credentials are input */
+.left-panel {
+    -fx-background-color: white;
+}
+
+/* Styling rules for the right-side blue graphic background image container */
+.right-panel {
+    -fx-background-color: #29ABE2;
+}
+
+/* Branding logo text heading */
+.logo-text {
+    -fx-font-family: "Public Sans";
+    -fx-font-size: 60px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A3C5E;
+    -fx-alignment: center;
+}
+
+/* Primary heading prompt label */
+.titleHeader-text {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A3C5E;
+    -fx-line-spacing: 6;
+}
+
+/* Text box wrapper container holding input field and side icon */
+.field-box {
+    -fx-background-color: #F0F4F8;
+    -fx-background-radius: 12;
+    -fx-padding: 10 14;
+}
+
+/* Actual input text nodes inside the field boxes */
+.input-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+    -fx-text-fill: #1A3C5E;
+    -fx-prompt-text-fill: #9AB2CA;
+}
+
+.input-field:focused {
+    -fx-background-color: transparent;
+}
+
+/* Button with eye icon toggling masked password visibility */
+.eye-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-padding: 0;
+}
+
+/* Remember me login checkbox text styles */
+.remember-check {
+    -fx-font-size: 12px;
+    -fx-text-fill: #5A7A9A;
+}
+
+/* Forgot Password link styles */
+.forgot-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: #5A7A9A;
+    -fx-border-color: transparent;
+}
+
+.forgot-link:hover {
+    -fx-text-fill: #1A3C5E;
+}
+
+/* Main dark submit button styling rules */
+.login-btn {
+    -fx-background-color: #121212;
+    -fx-text-fill: white;
+    -fx-background-radius: 12;
+    -fx-padding: 14 0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.login-btn:hover {
+    -fx-background-color: #2A2A2A;
+}
+
+/* 'Or' divider section label */
+.or-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9AB2CA;
+}
+
+/* White signup button configuration */
+.signup-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #1A3C5E;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: #1A3C5E;
+    -fx-padding: 12 0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.signup-btn:hover {
+    -fx-background-color: #EBF4FF;
+}
+
+/* Google OAuth placeholder sign in button */
+.google-btn {
+    -fx-background-color: #F0F4F8;
+    -fx-background-radius: 12;
+    -fx-text-fill: #1A3C5E;
+    -fx-padding: 12 0;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.google-btn:hover {
+    -fx-background-color: #E0ECF8;
+}
+
+/* Footer terms & policy label styles */
+.terms-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+}

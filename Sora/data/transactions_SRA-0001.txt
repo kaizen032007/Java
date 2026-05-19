@@ -1,0 +1,10 @@
+TXN-1778921557631 , Salary , Income , Income , 1000.0 , null , 2026-05-16
+TXN-1778946034889 , Deposit to Personal Wallet , Income , Income , 500.0 , Personal Wallet , 2026-05-16
+TXN-1778946042563 , Withdrawal from Personal Wallet , Miscellaneous , Expense , 500.0 , Personal Wallet , 2026-05-16
+TXN-1778946133395 , Deposit to Personal Wallet , Income , Income , 100.0 , Personal Wallet , 2026-05-16
+TXN-1778946300618 , Savings: LAPTOP , Miscellaneous , Expense , 500.0 , BPI , 2026-05-16
+TXN-1778946396530 , Subscription: YouTube Premium , Miscellaneous , Expense , 500.0 , BPI , 2026-05-16
+TXN-1778946914718 , Deposit to BPI , Income , Income , 10000.0 , BPI , 2026-05-16
+TXN-1778946926438 , Savings: LAPTOP , Miscellaneous , Expense , 1000.0 , BPI , 2026-05-16
+TXN-1779206568380 , Deposit to Personal Wallet , Income , Income , 100.0 , Personal Wallet , 2026-05-20
+TXN-1779208010847 , Subscription: YouTube Premium , Subscriptions , Expense , 500.0 , BPI , 2026-05-20

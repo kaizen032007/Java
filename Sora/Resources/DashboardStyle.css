@@ -1,0 +1,247 @@
+/* Styles for the main scroll pane container on the dashboard */
+.main-scroll {
+    -fx-background-color: #EEF2F8;
+    -fx-border-color: transparent;
+}
+
+.main-scroll>.viewport {
+    -fx-background-color: #EEF2F8;
+}
+
+/* Sidebar panel container with dark linear gradient */
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #1B2F6E, #263E8A, #1B2F6E);
+    -fx-pref-width: 220px;
+}
+
+/* Branding logo text styling inside the sidebar */
+.sidebar-logo-text {
+    -fx-font-family: "Public Sans";
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* Section dividers inside the sidebar menu */
+.sidebar-section-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255, 255, 255, 0.45);
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 6;
+}
+
+/* Sidebar navigation buttons */
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+    -fx-background-radius: 10;
+    -fx-padding: 10 14;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-btn:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+}
+
+.sidebar-btn-text {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+}
+
+/* Blend configuration used to make dark icons appear white inside the dark sidebar */
+.white-icon {
+    -fx-blend-mode: lighten;
+    -fx-opacity: 1.0;
+}
+
+/* Logout action button inside the sidebar */
+.logout-btn {
+    -fx-background-color: white;
+    -fx-text-fill: #1A3C5E;
+    -fx-background-radius: 8;
+    -fx-padding: 10 0;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.logout-btn:hover {
+    -fx-background-color: #EBF4FF;
+}
+
+/* Parent container for core dashboard page views */
+.main-content {
+    -fx-background-color: #EEF2F8;
+}
+
+/* Hello user greeting label */
+.hello-label {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A3C5E;
+}
+
+.user-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7A9BBF;
+}
+
+/* Summary balance banner bar */
+.balance-bar {
+    -fx-background-color: linear-gradient(to right, #1B2F6E, #2B4C8C, #3B6FD4);
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.15), 15, 0, 0, 5);
+}
+
+.balance-total {
+    -fx-font-size: 36px;
+    -fx-font-weight: 900;
+    -fx-text-fill: white;
+}
+
+/* Statistics sections within the balance bar container */
+.balance-stat {
+    -fx-border-color: rgba(255, 255, 255, 0.15);
+    -fx-border-width: 0 0 0 1;
+    -fx-padding: 0 32 0 32;
+}
+
+.balance-stat-value {
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-text-fill: white;
+}
+
+.balance-stat-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: rgba(255, 255, 255, 0.7);
+    -fx-font-weight: bold;
+    -fx-text-transform: uppercase;
+}
+
+/* Content cards on the dashboard panels */
+.dash-card {
+    -fx-background-color: #1E3A6E;
+    -fx-background-radius: 16;
+    -fx-padding: 18;
+}
+
+.card-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-padding: 0 0 6 0;
+}
+
+.card-link {
+    -fx-text-fill: #7AB3E0;
+    -fx-font-size: 11px;
+    -fx-border-color: transparent;
+    -fx-padding: 4 0 0 0;
+}
+
+/* Dynamic rows displaying individual financial accounts */
+.account-row {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 10;
+}
+
+.account-name {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.account-type {
+    -fx-text-fill: rgba(255, 255, 255, 0.45);
+    -fx-font-size: 11px;
+}
+
+.account-amount {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* Goal progress bar nodes styling */
+.goal-progress {
+    -fx-accent: #5B8FD4;
+    -fx-pref-height: 5;
+    -fx-background-radius: 4;
+}
+
+.goal-progress>.track {
+    -fx-background-color: rgba(255, 255, 255, 0.15);
+    -fx-background-radius: 4;
+}
+
+/* Pie Chart donut styling rules */
+.spending-chart {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.spending-chart .chart-content {
+    -fx-background-color: transparent;
+}
+
+.spending-chart .chart-pie-label {
+    -fx-fill: transparent;
+    -fx-font-size: 0;
+}
+
+.spending-chart .chart-pie-label-line {
+    -fx-stroke: transparent;
+}
+
+.spending-chart .chart-legend {
+    -fx-background-color: transparent;
+}
+
+/* Donut chart slice colors configurations */
+.spending-chart .data0.chart-pie {
+    -fx-pie-color: #3B6FD4;
+}
+
+.spending-chart .data1.chart-pie {
+    -fx-pie-color: #B06ED4;
+}
+
+.spending-chart .data2.chart-pie {
+    -fx-pie-color: #D0D8E8;
+}
+
+/* Dynamic breakdown rows displaying category spending totals */
+.breakdown-row {
+    -fx-background-color: rgba(255, 255, 255, 0.07);
+    -fx-background-radius: 10;
+}
+
+.breakdown-name {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.breakdown-value {
+    -fx-text-fill: rgba(255, 255, 255, 0.6);
+    -fx-font-size: 12px;
+}
+
+/* Secondary dark action buttons */
+.login-btn {
+    -fx-background-color: #000000;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+
+.login-btn:hover {
+    -fx-background-color: #3B6FD4;
+}
