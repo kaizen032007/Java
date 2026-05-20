@@ -111,8 +111,8 @@ Sora/
 *   **Validation Constraints**: Form controls reject duplicate email registrations, password disparities, and formatting inconsistencies at submission.
 
 ## Created By Following:
-Almeria
-Cada
-Reyes
-Orcino
-Plaza
+# Almeria |
+# Cada | 
+# Reyes | 
+# Orcino | 
+# Plaza | 
