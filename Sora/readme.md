@@ -110,9 +110,10 @@ Sora/
 *   **Unique Accounts Isolation**: Every registered user is assigned a distinct user identification sequence (`SRA-xxxx`). Data files containing transaction details, goals, and budgets are saved separately per user ID, ensuring complete isolation in multi-user environments.
 *   **Validation Constraints**: Form controls reject duplicate email registrations, password disparities, and formatting inconsistencies at submission.
 
+THIS IS NOT AFFILIATED WITH EXISTING BUSINESS CORPORATION. THIS IS JUST MERELY PERSONAL PROJECTS.
 ## Created By Following:
-# Almeria |
-# Cada | 
-# Reyes | 
-# Orcino | 
-# Plaza | 
+# Almeria 
+# Cada 
+# Reyes 
+# Orcino 
+# Plaza 
